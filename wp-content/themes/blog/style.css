@@ -1,0 +1,55 @@
+/*
+    Theme name: Blog Theme 
+    Theme URI:http://localhost/BLOG/
+    Author: Karla
+    Author URI: https://vasto.com.br
+    Github Theme URI:https://github.com/KaCrepaldi
+    Description: Tema customizado para blog...
+    Version: 1.0.0
+    Text domain: pt_BR;
+
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+
+}
+
+body {
+    font-size: 1.6rem;
+
+}
+
+
+header {
+    background-color: #dedede;
+    width: 100%;
+
+
+}
+
+footer {
+    background-color: #dedede;
+    width: 100%;
+
+}
+
+aside {
+    padding-left: 2 rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    padding-top: 2 rem;
+    
+}
