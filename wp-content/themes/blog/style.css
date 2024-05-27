@@ -28,6 +28,12 @@ body {
 
 }
 
+.wp-block-image img,
+img{
+    max-width: 100% !important;
+    height: auto;
+}
+
 
 header {
     background-color: #dedede;
@@ -44,7 +50,17 @@ footer {
 
 aside {
     padding-left: 2 rem;
+   
 }
+
+section {
+    
+}
+h1, h2, h3, h4, h5, h6, p, form {
+    margin-bottom:2rem;
+}  
+
+
 
 .container {
     max-width: 1000px;
