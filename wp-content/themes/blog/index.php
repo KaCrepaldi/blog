@@ -2,37 +2,70 @@
 
 <main class="container">
     <section>
-
-    <?php
-    if( have_posts()) :
-    while( have_posts()) : the_post() ;
-?>
-<content>
-    <div class="container">
-        <h2><a href="<?php the_permalink() ?>">
-            <?php the_title() ?></a> 
+        <?php
+        if( have_posts()) :
+            while( have_posts()) : the_posts();
+    ?>
+    <content>
+            <div class="container">
+                <h2><a href="<?php the_permalink() ?>">
+            <?php the_title() ?></a>
         </h2>
-        <?php 
+        <?php
             if(has_post_thumbnail()){
                 the_post_thumbnail('imagem_horizontal');
-        }
-    ?>
-    <?php the_excerpt() ?>
-    <p> <a href="<?php the_permalink() ?>">
-     Saiba mais </a>
-    </p>
+
+            }
+        ?>
+        <?php the_excerpt() ?>
+        <p><a href="<?php the_permalink() ?>">
+            Saiba mais</a>
+        </p>
     </div>
-</content>
-<?php
+    </content>
+    <?php
+        endwhile;
+    else :
+        echo "<p>Não há posts</p>" ;
+    endif;
+    ?>
+    </section>
+    <aside>
+        <div class="container">
+            <?php 
 
-    endwhile;
-else :
-    echo "<p>Não há posts</p>" ;
-endif;
+              $args = array(
+                   'post_type' => 'portfolio',
+                   'post_per_page' => '5',
+                   'orderby' => 'title'
+              );
 
-?>
-    <aside>    
-    <?php get_sidebar() ?>
+              $portfolioItens = new WP_Query($args);
+
+              while( $portfolioItens->have_posts()) :
+                     $portfolioItens->the_posts();
+              
+            ?>
+
+                <div class="portfolio-item">
+                <h3><?php the_title(); ?></h3>
+                <?php the_content(); ?>
+                <a href="<?php the_permalink() ?>">
+
+                <?php
+                if(has_post_thumbnail()){
+                    the_post_thumbnail('imagem_horizontal');
+                }
+                ?>
+            </a>
+            <p><a href="<?php the_permalink() ?>">Saiba mais</a>
+         </p>
+        </div>
+        <?php endwhile; ?>
+    
     </aside>
 </main>
-<?php get_footer() ?>
+<?php get_footer(); ?>
+    
+    </section>
+</main>

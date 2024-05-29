@@ -7,7 +7,7 @@
         <h2> <?php the_title()  ?> </h2>
         <?php the_content() ?>
     
-        </main>
+        
     </div>
    </section>
    <aside>
@@ -16,6 +16,8 @@
              the_post_thumbnail();
          }
         ?>
-   </aside>
+   
+    </aside>
+    
 </main>
-<?php get_footer(): ?>
+<?php get_footer(); ?>

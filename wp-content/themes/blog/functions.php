@@ -70,7 +70,7 @@ function createPortfolio() {
     ];
 
     // nome oficial do tipo de conteudo registrado
-    register_post_type("portfolio, $args");
+    register_post_type("portfolio", $args);
 
 }
 
